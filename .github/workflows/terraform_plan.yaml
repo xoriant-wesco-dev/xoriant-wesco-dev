@@ -14,6 +14,7 @@ jobs:
     - name: Checkout Infra Code
       uses: actions/checkout@v2
       with:
+        ref: 'develop'
         path: Infra
     - uses: hashicorp/setup-terraform@v1.3.2
       with:
@@ -23,6 +24,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: xoriant-wesco-dev/TFCoreModules
+        ref: 'develop'
         path: TerraformCore
 
     - name: Terraform fmt
