@@ -1,4 +1,4 @@
-module "fileshare" {
+/*module "fileshare" {
   source                   = "../TerraformCore/modules/terraform-azurerm-storageaccount"
   resource_group_name      = var.fileshare.resource_grp_name //module.resource_group.resource_group.common.name
   location                 = var.fileshare.location          //module.resource_group.resource_group.common.location
@@ -8,7 +8,7 @@ module "fileshare" {
   account_kind             = var.fileshare.account_kind
   resource_tags            = var.resource_tags
   deployment_tags          = var.deployment_tags
-}
+}*/
 /*
 module "keyvault" {
   source = "../TerraformCore/modules/terraform-azurerm-keyvault"
