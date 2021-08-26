@@ -22,7 +22,7 @@ jobs:
     - name: Checkout Core TF modules
       uses: actions/checkout@v2
       with:
-        repository: xoriant-wesco-dev/TFCoreModule
+        repository: xoriant-wesco-dev/TFCoreModules
         path: TerraformCore
 
     - name: Terraform fmt
