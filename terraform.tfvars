@@ -14,6 +14,8 @@ deployment_tags = {
   ApplicationOwner = "pchawla@xyz.com"
 }
 
+
+
 fileshare = {
   resource_grp_name        = "SampleResourceGroup1"
   location                 = "eastus"
@@ -24,7 +26,7 @@ fileshare = {
 }
 
 
-
+/*Test comment*/
 /*
 Keyvault = {
   name                            = "xor-dev-keyvault-poc"
