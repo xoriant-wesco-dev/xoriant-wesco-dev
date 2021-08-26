@@ -1,0 +1,46 @@
+name: Terraform Plan
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+    
+jobs:
+
+  Terraform-Plan:
+    runs-on: ubuntu-latest
+   
+    steps:
+    - name: Checkout Infra Code
+      uses: actions/checkout@v2
+      with:
+        path: Infra
+    - uses: hashicorp/setup-terraform@v1.3.2
+      with:
+        terraform_version: 1.0.4
+
+    - name: Checkout Core TF modules
+      uses: actions/checkout@v2
+      with:
+        repository: xoriant-wesco-dev/TFCoreModule
+        path: TerraformCore
+
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -recursive
+      working-directory: ./Infra
+
+    - name: Terraform Init
+      id: init
+      run: terraform init -no-color
+      working-directory: ./Infra
+
+    - name: Terraform Validate
+      id: validate
+      run: terraform validate -no-color
+      working-directory: ./Infra
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -var 'client_secret=${{ secrets.CLIENT_SECRET }}' -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}' -var 'client_id=${{ secrets.CLIENT_ID }}' -var 'tenant_id=${{ secrets.TENANT_ID }}'
+      working-directory: ./Infra
