@@ -1,4 +1,4 @@
-/*module "fileshare" {
+module "fileshare" {
   source                   = "../TerraformCore/modules/terraform-azurerm-storageaccount"
   resource_group_name      = var.fileshare.resource_grp_name 
   location                 = var.fileshare.location          
@@ -9,7 +9,7 @@
   resource_tags            = var.resource_tags
   deployment_tags          = var.deployment_tags
 }
-*/
+
 
 
 
