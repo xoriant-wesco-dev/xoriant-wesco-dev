@@ -13,7 +13,7 @@ deployment_tags = {
   BusinessOwner    = "sshankaran@xyz.com"
   ApplicationOwner = "pchawla@xyz.com"
 }
-
+/*
 fileshare = {
   resource_grp_name        = "SampleResourceGroup1"
   location                 = "eastus"
@@ -22,7 +22,7 @@ fileshare = {
   account_replication_type = "LRS"
   account_kind             = "FileStorage"
 }
-
+*/
 
 
 /*
